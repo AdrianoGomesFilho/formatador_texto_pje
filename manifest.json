@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Clipboard Text Formatter",
+  "version": "1.0",
+  "description": "Automatically format text in the clipboard by removing line breaks.",
+  "permissions": ["clipboardRead", "clipboardWrite", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}
