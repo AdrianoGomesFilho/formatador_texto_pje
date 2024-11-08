@@ -1,0 +1,11 @@
+{
+    "manifest_version": 3,
+    "name": "Text Formatter",
+    "version": "1.1",
+    "description": "A Chrome extension to format text by removing breaklines, extra spaces, and specific strings.",
+    "permissions": ["storage"],
+    "action": {
+      "default_popup": "popup.html"
+    }
+   
+  }
