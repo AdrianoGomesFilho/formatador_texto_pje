@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "PDF Text Formatter",
+  "version": "1.0",
+  "description": "Extract and format text from a PDF.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
