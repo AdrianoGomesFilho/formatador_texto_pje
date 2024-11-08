@@ -1,0 +1,28 @@
+text layer embbed pdf in a site, i cant copy more than one page, i only can copy text from one page
+
+O ChatGPT disse:
+ChatGPT
+It sounds like you're dealing with a PDF embedded in a website, and you're unable to copy text across multiple pages. This can happen for a few reasons, and I can suggest some solutions based on the situation.
+
+Possible Reasons & Solutions:
+PDF is Locked or Protected
+
+Why: Some PDFs are locked with restrictions that prevent copying or extraction of text, especially across multiple pages. This could be the case if the document is password-protected or has copy restrictions embedded.
+Solution: You can try using a PDF unlocking tool (if legally allowed) to remove restrictions. There are many free online tools like PDF Unlocker or SmallPDF that can help. However, be cautious and make sure the document isn’t copyrighted or confidential.
+Embedded PDF Viewer Limitation
+
+Why: Some embedded PDF viewers (like the default one in a website or browser) might not support copying across multiple pages or could have other limitations.
+Solution: Try downloading the PDF file to your device. Once it’s downloaded, open it in a dedicated PDF reader (e.g., Adobe Acrobat Reader, Foxit PDF, or even your browser’s native PDF viewer). This should allow you to copy text from multiple pages.
+Website-specific Restrictions
+
+Why: The website may have configured its PDF embedding tool to prevent copying text from more than one page or to limit interaction with the document.
+Solution: In this case, there’s not much you can do unless you contact the website’s administrator. However, if you need the text, downloading the document or using a screen reader (if the document is accessible) might work.
+Browser Issues or Settings
+
+Why: Your browser or settings might be causing the issue.
+Solution: Try using a different browser or clearing your cache and cookies. If you’re using a browser PDF viewer, try disabling it and opening the document with an external viewer.
+OCR (Optical Character Recognition) Option
+
+Why: If the text is part of an image (scanned documents), it might not be selectable for copying.
+Solution: If the PDF is an image scan, try using OCR software to extract the text. There are online tools like Online OCR or apps like Adobe Acrobat Pro that can convert scanned images into selectable text.
+If none of these solutions work, feel free to give me more context (like how you're trying to copy the text or what happens when you attempt it), and I can help you troubleshoot further.
