@@ -3,14 +3,14 @@ document.getElementById('formatButton').addEventListener('click', function() {
   let formattedText = inputText
     .replace(/\s+/g, ' ') // Remove extra spaces
     .replace(/\n/g, ' ') // Remove breaklines
-    .replace(/Documento assinado eletronicamente por.*? - \w{7}/g, '') // Remove specific string
-    .replace(/Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/g, '') // Remove entire sentence
-    .replace(/QR Code para validação de documento.*? - \w{7}/g, '') // Remove QR Code validation string
-    .replace(/Símbolo PJe QR Code para validação de documento/g, '') // Remove additional string
-    .replace(/Fls\.\:\s*\d+/g, '') // Remove "Fls.: <number>"
-    .replace(/Assinado eletronicamente por:.*? - Juntado em: \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/g, '') // Remove any signed text
     .replace(/^\s*[\r\n]+/gm, '') // Remove blank lines
     .replace(/^\s*$/gm, '') // Remove lines that are only whitespace
+    .replace(/Fls\.\:\s*\d+/g, '')
+    .replace(/Documento assinado eletronicamente por.*? - \w{7}/g, '')
+    .replace(/Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/g, '')
+    .replace(/Assinado eletronicamente por:.*? - Juntado em: \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/g, '')
+    .replace(/QR Code para validação de documento.*? - \w{7}/g, '')
+    .replace(/Símbolo PJe QR Code para validação de documento/g, '')
     .trim();
   document.getElementById('output').value = formattedText;
 });
