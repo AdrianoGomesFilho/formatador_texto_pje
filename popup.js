@@ -7,6 +7,8 @@ document.getElementById('formatButton').addEventListener('click', function() {
     .replace(/Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/g, '') // Remove entire sentence
     .replace(/QR Code para validação de documento.*? - \w{7}/g, '') // Remove QR Code validation string
     .replace(/Símbolo PJe QR Code para validação de documento/g, '') // Remove additional string
+    .replace(/^\s*[\r\n]+/gm, '') // Remove blank lines
+    .replace(/^\s*$/gm, '') // Remove lines that are only whitespace
     .trim();
   document.getElementById('output').value = formattedText;
 });
