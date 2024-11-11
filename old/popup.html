@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Text Formatter</title>
   <style>
     body {
@@ -16,25 +18,14 @@
     button {
       width: 100%;
       padding: 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-    #output {
-      width: 100%;
-      height: 100px;
-      margin-top: 10px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <textarea id="input" placeholder="Paste your text here..."></textarea>
+  <textarea id="input" placeholder="Enter text here..."></textarea>
   <button id="formatButton">Format Text</button>
-  <textarea id="output" readonly placeholder="Formatted text will appear here..."></textarea>
+  <textarea id="output" placeholder="Formatted text will appear here..."></textarea>
   <script src="popup.js"></script>
 </body>
 </html>

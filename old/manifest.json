@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Text Formatter",
+  "version": "1.0",
+  "description": "A simple text formatter extension.",
+  "permissions": [
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Text Formatter"
+  }
+}
