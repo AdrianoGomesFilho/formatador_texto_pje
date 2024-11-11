@@ -1,16 +1,13 @@
 {
-  "manifest_version": 2,
-  "name": "PDF Text Extractor",
+  "manifest_version": 3,
+  "name": "Text Formatter",
   "version": "1.0",
-  "description": "Extract text from PDFs on specific pages when hovering over them.",
+  "description": "A simple text formatter extension.",
   "permissions": [
-    "activeTab",
-    "https://pje.trt6.jus.br/*"  // Replace with the specific URL(s) you want to target
+    "activeTab"
   ],
-  "content_scripts": [
-    {
-      "matches": ["https://pje.trt6.jus.br/*"],  // Replace with the specific URL(s) you want to target
-      "js": ["content.js"]
-    }
-  ]
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Text Formatter"
+  }
 }
