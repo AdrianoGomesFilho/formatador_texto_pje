@@ -1,5 +1,17 @@
-document.getElementById('formatButton').addEventListener('click', function() {
-  let inputText = document.getElementById('input').value;
+// document.getElementById('formatButton').addEventListener('click', function() {
+//   formatText();
+// });
+
+document.getElementById('inputText').addEventListener('input', function() {
+  formatText();
+});
+
+document.getElementById('copyButton').addEventListener('click', function() {
+  copyText();
+});
+
+function formatText() {
+  let inputText = document.getElementById('inputText').value;
   let formattedText = inputText
     .replace(/\s+/g, ' ') // Remove extra spaces
     .replace(/\n/g, ' ') // Remove breaklines
@@ -12,5 +24,12 @@ document.getElementById('formatButton').addEventListener('click', function() {
     .replace(/QR Code para validação de documento.*? - \w{7}/g, '')
     .replace(/Símbolo PJe QR Code para validação de documento/g, '')
     .trim();
-  document.getElementById('output').value = formattedText;
-});
+  document.getElementById('outputText').value = formattedText;
+}
+
+function copyText() {
+  let outputText = document.getElementById('outputText');
+  outputText.select();
+  outputText.setSelectionRange(0, 99999); // For mobile devices
+  document.execCommand('copy');
+}

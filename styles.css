@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --background: #ffffff;
+    --destaque: #ffb392;
+    --detalhe1: #ffffff;
+    --detalhe2: #e6f3ff;
+    --escuro: #02040F;
+}
+
+html {
+  border-radius: 20px; /* Ensure the border radius is applied to the entire popup */
+  overflow: hidden; /* Prevent scrollbars from appearing due to border radius */
+}
+
+html, body {
+  border-radius: 20px;
+  overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 20px; /* Increased border-radius */
+}
+
+h1 {
+  color: var(--text-color);
+  margin: 10px;
+  text-align: center; /* Center the titles horizontally */
+}
+
+.input {
+    background-color: var(--detalhe2);
+}
+
+textarea {
+  width: 400px;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+textarea:focus {
+  outline: none; /* Remove border visibility on focus */
+}
+
+button {
+  background-color: var(--destaque);
+  color: var(--text-color);
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+  background-color: var(--detalhe2);
+}
+
+.footer {
+    margin: 10px auto;
+    text-align: center; /* Center the titles horizontally */
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  margin: 10px;
+}
+
+/* Hide scrollbar for all elements */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar { /* WebKit browsers */
+  display: none;
+}
