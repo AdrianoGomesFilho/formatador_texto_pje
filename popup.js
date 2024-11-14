@@ -23,6 +23,11 @@ function formatText() {
     .replace(/Assinado eletronicamente por:.*? - Juntado em: \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/g, '')
     .replace(/QR Code para validação de documento.*? - \w{7}/g, '')
     .replace(/Símbolo PJe QR Code para validação de documento/g, '')
+    .replace(/Número do processo: \d{7}-\d{2}\.\d{4}\.\d{1,2}\.\d{2}\.\d{4}/g, '') // Remove "Número do processo: <number>"
+    .replace(/Número do documento: \d{29}/g, '') // Remove "Número do documento: <number>"
+    .replace(/https:\/\/pje\.trt\d{2}\.jus\.br\/(segundograu|primeirograu)\/Processo\/ConsultaDocumento\/listView\.seam\?nd=\d{29}/g, '') // Remove URL
+    .replace(/ID\. \w{7} - Pág\. \d+/g, '') // Remove "ID. <id> - Pág. <number>"
+    .replace(/\d{26}/g, '') // Remove 26-digit numbers
     .trim();
   document.getElementById('outputText').value = formattedText;
 }
