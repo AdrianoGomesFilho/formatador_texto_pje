@@ -1,14 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "Text Formatter",
+  "name": "Formatador de texto PJE",
   "version": "1.0",
-  "description": "A simple text formatter extension.",
+  "description": "Extensão criada para formatar textos copiados do PJE, removendo quebras de linhas, espaços em excesso, assinaturas digitais etc.",
   "permissions": [
     "activeTab"
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Text Formatter",
+    "default_title": "Formatador de texto PJE",
     "default_icon": {
       "16": "icon.png",
       "48": "icon.png",
