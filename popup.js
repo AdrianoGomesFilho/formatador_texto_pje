@@ -1,13 +1,11 @@
-// document.getElementById('formatButton').addEventListener('click', function() {
-//   formatText();
-// });
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('inputText').addEventListener('input', function() {
+    formatText();
+  });
 
-document.getElementById('inputText').addEventListener('input', function() {
-  formatText();
-});
-
-document.getElementById('copyButton').addEventListener('click', function() {
-  copyText();
+  document.getElementById('copyButton').addEventListener('click', function() {
+    copyText();
+  });
 });
 
 function formatText() {

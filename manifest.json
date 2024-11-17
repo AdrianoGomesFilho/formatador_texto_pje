@@ -1,18 +1,29 @@
 {
-  "manifest_version": 3,
-  "name": "Formatador de texto PJE",
+  "manifest_version": 2,
+  "name": "Copiador de Texto PJE",
   "version": "1.0",
-  "description": "Extensão criada para formatar textos copiados do PJE, removendo quebras de linhas, espaços em excesso, assinaturas digitais etc.",
+  "description": "Extension to format and copy text from PJE.",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "declarativeContent"
   ],
-  "action": {
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup.js"]
+    }
+  ],
+  "browser_action": {
     "default_popup": "popup.html",
-    "default_title": "Formatador de texto PJE",
     "default_icon": {
       "16": "icon.png",
       "48": "icon.png",
       "128": "icon.png"
     }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
   }
 }
