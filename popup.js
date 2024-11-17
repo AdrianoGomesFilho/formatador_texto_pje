@@ -12,27 +12,41 @@ document.getElementById('copyButton').addEventListener('click', function() {
 
 function formatText() {
   let inputText = document.getElementById('inputText').value;
-  let formattedText = inputText
-    .replace(/\s+/g, ' ') // Remove extra spaces
-    .replace(/\n/g, ' ') // Remove breaklines
-    .replace(/^\s*[\r\n]+/gm, '') // Remove blank lines
-    .replace(/^\s*$/gm, '') // Remove lines that are only whitespace
-    .replace(/Documento assinado eletronicamente por.*? - \w{7}/g, '')
-    .replace(/Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/g, '')
-    .replace(/Assinado eletronicamente por:.*? - Juntado em: \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/g, '')
-    .replace(/QR Code para validação de documento.*? - \w{7}/g, '')
-    .replace(/Símbolo PJe QR Code para validação de documento/g, '')
-    .replace(/Número do processo: \d{7}-\d{2}\.\d{4}\.\d{1,2}\.\d{2}\.\d{4}/g, '') // Remove "Número do processo: <number>"
-    .replace(/Número do documento: \d{29}/g, '') // Remove "Número do documento: <number>"
-    .replace(/https:\/\/pje\.trt\d{2}\.jus\.br\/(segundograu|primeirograu)\/Processo\/ConsultaDocumento\/listView\.seam\?nd=\d{29}/g, '') // Remove URL
-    .replace(/ID\. \w{8} - Pág\. \d+/g, '') // Remove "ID. <id> - Pág. <number>"
-    .replace(/\d{29}/g, '') // Remove 29-digit numbers
-    .replace(/https:\/\/pje\.trt\d{2}\.jus\.br\/(segundograu|primeirograu)\/Processo\/ConsultaDocumento\/listView\.seam\?nd=\d{29}/g, '') // Remove URL
-    .replace(/ID\. \w{7} - Pág\. \d+/g, '') // Remove "ID. <id> - Pág. <number>"
-    .replace(/\d{29}/g, '') // Remove 29-digit numbers  
-    .replace(/Fls\.\:\s*\d+/g, '') // Remove "Fls.: <number>"
-    
-    .trim();
+  console.log("Original Input:", inputText); // Debugging
+
+  let formattedText = inputText.replace(/\s+/g, ' '); // Remove extra spaces
+  console.log("After removing extra spaces:", formattedText); // Debugging
+
+  formattedText = formattedText.replace(/Número do processo:\s*\d{7}-\d{2}\.\d{4}\.\d{1,2}\.\d{2}\.\d{4}/gi, ''); // Remove "Número do processo: <number>"
+  console.log("After removing Número do processo:", formattedText); // Debugging
+
+  formattedText = formattedText.replace(/Número do documento:\s*\d{29}/gi, ''); // Remove "Número do documento: <number>"
+  console.log("After removing Número do documento:", formattedText); // Debugging
+
+  formattedText = formattedText.replace(/https:\/\/pje\.trt\d{2}\.jus\.br\/(segundograu|primeirograu)\/Processo\/ConsultaDocumento\/listView\.seam\?nd=\d{29}/gi, ''); // Remove URL
+  console.log("After removing URL:", formattedText); // Debugging
+
+  formattedText = formattedText.replace(/Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/gi, ''); // Remove "Assinado eletronicamente por: <name> - <date> - <id>"
+  console.log("After removing Assinado eletronicamente por:", formattedText); // Debugging
+
+  formattedText = formattedText.replace(/ID\. \w{7,8} - Pág\. \d+/gi, ''); // Remove "ID. <id> - Pág. <number>"
+  console.log("After removing ID and Pág:", formattedText); // Debugging
+
+  formattedText = formattedText.replace(/Fls\.\:\s*\d+/gi, ''); // Remove "Fls.: <number>"
+  console.log("After removing Fls:", formattedText); // Debugging
+
+  formattedText = formattedText.replace(/\n/g, ' '); // Remove breaklines
+  console.log("After removing breaklines:", formattedText); // Debugging
+
+  formattedText = formattedText.replace(/^\s*[\r\n]+/gm, ''); // Remove blank lines
+  console.log("After removing blank lines:", formattedText); // Debugging
+
+  formattedText = formattedText.replace(/^\s*$/gm, ''); // Remove lines that are only whitespace
+  console.log("After removing lines that are only whitespace:", formattedText); // Debugging
+
+  formattedText = formattedText.replace(/\s+/g, ' ').trim(); // Remove any extra spaces left after replacements
+  console.log("Final Formatted Text:", formattedText); // Debugging
+
   document.getElementById('outputText').value = formattedText;
 }
 
