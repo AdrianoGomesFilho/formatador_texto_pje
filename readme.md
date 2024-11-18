@@ -10,7 +10,8 @@ O Formatador de Texto PJE é uma ferramenta desenvolvida para facilitar a format
 - Removação de trechos com assinatura digital/QR CODE
 
 ## Como Usar
-1. Baixar extensão via loja de aplicativos Google Chrome
+1. Baixar arquivos da extensão via link do Google Drive: https://drive.google.com/drive/folders/1-NFXVpSV905gR_PdSsUKQ_8aE7svJb4m?usp=sharing
+2. O tutorial de instalação está disponível no Youtube: https://youtu.be/HycpL_gm7b4
 
 ## Licença
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.

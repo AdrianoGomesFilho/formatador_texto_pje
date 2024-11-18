@@ -1,8 +1,8 @@
 {
-  "manifest_version": 2,
-  "name": "Copiador de Texto PJE",
+  "manifest_version": 3,
+  "name": "Formatador de Texto PJE",
   "version": "1.0",
-  "description": "Extension to format and copy text from PJE.",
+  "description": "Extensão capaz de remover trechos indesejados, espaços duplicados e quebras de linha de textos copiados do PJE.",
   "permissions": [
     "activeTab",
     "declarativeContent"
@@ -13,7 +13,7 @@
       "js": ["popup.js"]
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icon.png",
