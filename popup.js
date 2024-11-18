@@ -21,8 +21,9 @@ function formatText() {
   formattedText = formattedText.replace(/Número do documento:\s*\d{29}/gi, ''); // Remove "Número do documento: <number>"
   console.log("After removing Número do documento:", formattedText); // Debugging
 
-  formattedText = formattedText.replace(/https:\/\/pje\.trt\d{2}\.jus\.br\/(segundograu|primeirograu)\/Processo\/ConsultaDocumento\/listView\.seam\?nd=\d{29}/gi, ''); // Remove URL
-  console.log("After removing URL:", formattedText); // Debugging
+  // Remove URLs even if they are part of a longer line
+  formattedText = formattedText.replace(/https:\/\/pje\.trt\d+\.jus\.br\/\w+\/Processo\/ConsultaDocumento\/listView\.seam\?nd=\d+/gi, '');
+  console.log("After removing URLs:", formattedText); // Debugging
 
   formattedText = formattedText.replace(/Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/gi, ''); // Remove "Assinado eletronicamente por: <name> - <date> - <id>"
   console.log("After removing Assinado eletronicamente por:", formattedText); // Debugging
