@@ -28,6 +28,9 @@ function formatText() {
   formattedText = formattedText.replace(/Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/gi, ''); // Remove "Assinado eletronicamente por: <name> - <date> - <id>"
   console.log("After removing Assinado eletronicamente por:", formattedText); // Debugging
 
+  formattedText = formattedText.replace(/Documento assinado eletronicamente por .*?, em \d{2}\/\d{2}\/\d{4}, às \d{2}:\d{2}:\d{2} - \w{7}/gi, ''); // Remove "Documento assinado eletronicamente por <name>, em <date>, às <time> - <id>"
+  console.log("After removing Documento assinado eletronicamente por:", formattedText); // Debugging
+
   formattedText = formattedText.replace(/ID\. \w{7,8} - Pág\. \d+/gi, ''); // Remove "ID. <id> - Pág. <number>"
   console.log("After removing ID and Pág:", formattedText); // Debugging
 
