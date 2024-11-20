@@ -15,3 +15,5 @@ O Formatador de Texto PJE é uma ferramenta desenvolvida para facilitar a format
 
 ## Licença
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+Vídeo apresentação do projeto no Instagram @adrianogomes.adv
