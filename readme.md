@@ -3,6 +3,8 @@
 ## Descrição
 O Formatador de Texto PJE é uma ferramenta desenvolvida para facilitar a formatação de textos no sistema PJE (Processo Judicial Eletrônico). Ele permite que os usuários formatem documentos de maneira rápida e eficiente.
 
+Vídeo de apresentação do projeto no Instagram [@adrianogomes.adv](https://instagram.com/adrianogomes.adv)
+
 ## Funcionalidades
 - Remoção de quebras de linha, ocupando menos espaço na citação
 - Remoção de linhas em branco
@@ -17,3 +19,4 @@ O Formatador de Texto PJE é uma ferramenta desenvolvida para facilitar a format
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 Vídeo apresentação do projeto no Instagram @adrianogomes.adv
+
