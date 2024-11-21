@@ -29,7 +29,7 @@ function formatText() {
   // Remove "Assinado eletronicamente por: <nome> - <data> - <id>"
   formattedText = formattedText.replace(/Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/gi, '');
 
-  // Remove "Documento assinado eletronicamente por <nome>, em <data>, às <hora> - <id>"
+  // Remove "Documento assinado eletronicamente por <nome>, em <data>, às <hora> - <id>", o quantificador non greedy .*? garante que o restante da expressão seja detectado
   formattedText = formattedText.replace(/Documento assinado eletronicamente por .*?, em \d{2}\/\d{2}\/\d{4}, às \d{2}:\d{2}:\d{2} - \w{7}/gi, '');
   console.log
 
