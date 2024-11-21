@@ -5,6 +5,8 @@ O Formatador de Texto PJE é uma extensão para o Google Chrome desenvolvida par
 
 Vídeo de apresentação do projeto no Instagram [@adrianogomes.adv](https://instagram.com/adrianogomes.adv)
 
+Obs: a ideia da extensão é funcionar no PJE trabalhista!
+
 ## Funcionalidades
 - Remoção de quebras de linha, ocupando menos espaço na citação
 - Remoção de linhas em branco
