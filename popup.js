@@ -1,60 +1,76 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Adiciona um ouvinte de eventos ao elemento de entrada para formatar o texto ao digitar
   document.getElementById('inputText').addEventListener('input', function() {
     formatText();
   });
 
+  // Adiciona um ouvinte de eventos ao botão para copiar o texto ao clicar
   document.getElementById('copyButton').addEventListener('click', function() {
     copyText();
   });
 });
 
+// Função para formatar o texto de entrada
 function formatText() {
   let inputText = document.getElementById('inputText').value;
-  console.log("Original Input:", inputText); // Debugging
+  console.log("Entrada Original:", inputText); // Depuração
 
-  let formattedText = inputText.replace(/\s+/g, ' '); // Remove extra spaces
-  console.log("After removing extra spaces:", formattedText); // Debugging
+  // Remove espaços extras
+  let formattedText = inputText.replace(/\s+/g, ' ');
+  console.log("Após remover espaços extras:", formattedText); // Depuração
 
-  formattedText = formattedText.replace(/Número do processo:\s*\d{7}-\d{2}\.\d{4}\.\d{1,2}\.\d{2}\.\d{4}/gi, ''); // Remove "Número do processo: <number>"
-  console.log("After removing Número do processo:", formattedText); // Debugging
+  // Remove "Número do processo: <número>"
+  formattedText = formattedText.replace(/Número do processo:\s*\d{7}-\d{2}\.\d{4}\.\d{1,2}\.\d{2}\.\d{4}/gi, '');
+  console.log("Após remover Número do processo:", formattedText); // Depuração
 
-  formattedText = formattedText.replace(/Número do documento:\s*\d{29}/gi, ''); // Remove "Número do documento: <number>"
-  console.log("After removing Número do documento:", formattedText); // Debugging
+  // Remove "Número do documento: <número>"
+  formattedText = formattedText.replace(/Número do documento:\s*\d{29}/gi, '');
+  console.log("Após remover Número do documento:", formattedText); // Depuração
 
-  // Remove URLs even if they are part of a longer line
+  // Remove URLs mesmo que façam parte de uma linha mais longa
   formattedText = formattedText.replace(/https:\/\/pje\.trt\d+\.jus\.br\/\w+\/Processo\/ConsultaDocumento\/listView\.seam\?nd=\d+/gi, '');
-  console.log("After removing URLs:", formattedText); // Debugging
+  console.log("Após remover URLs:", formattedText); // Depuração
 
-  formattedText = formattedText.replace(/Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/gi, ''); // Remove "Assinado eletronicamente por: <name> - <date> - <id>"
-  console.log("After removing Assinado eletronicamente por:", formattedText); // Debugging
+  // Remove "Assinado eletronicamente por: <nome> - <data> - <id>"
+  formattedText = formattedText.replace(/Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/gi, '');
+  console.log("Após remover Assinado eletronicamente por:", formattedText); // Depuração
 
-  formattedText = formattedText.replace(/Documento assinado eletronicamente por .*?, em \d{2}\/\d{2}\/\d{4}, às \d{2}:\d{2}:\d{2} - \w{7}/gi, ''); // Remove "Documento assinado eletronicamente por <name>, em <date>, às <time> - <id>"
-  console.log("After removing Documento assinado eletronicamente por:", formattedText); // Debugging
+  // Remove "Documento assinado eletronicamente por <nome>, em <data>, às <hora> - <id>"
+  formattedText = formattedText.replace(/Documento assinado eletronicamente por .*?, em \d{2}\/\d{2}\/\d{4}, às \d{2}:\d{2}:\d{2} - \w{7}/gi, '');
+  console.log("Após remover Documento assinado eletronicamente por:", formattedText); // Depuração
 
-  formattedText = formattedText.replace(/ID\. \w{7,8} - Pág\. \d+/gi, ''); // Remove "ID. <id> - Pág. <number>"
-  console.log("After removing ID and Pág:", formattedText); // Debugging
+  // Remove "Documento assinado eletronicamente por <nome>, em <data>, às <hora> - <id> Fls.: <número>"
+  formattedText = formattedText.replace(/Documento assinado eletronicamente por .*?, em \d{2}\/\d{2}\/\d{4}, às \d{2}:\d{2}:\d{2} - \w{7} Fls\.\: \d+/gi, '');
+  console.log("Após remover Documento assinado eletronicamente por com Fls:", formattedText); // Depuração
 
-  formattedText = formattedText.replace(/Fls\.\:\s*\d+/gi, ''); // Remove "Fls.: <number>"
-  console.log("After removing Fls:", formattedText); // Debugging
+  // Remove "ID. <id> - Pág. <número>"
+  formattedText = formattedText.replace(/Fls\.\:\s*\d+/gi, '');
+  console.log("Após remover Fls:", formattedText); // Depuração
 
-  formattedText = formattedText.replace(/\n/g, ' '); // Remove breaklines
-  console.log("After removing breaklines:", formattedText); // Debugging
+  // Remove quebras de linha
+  formattedText = formattedText.replace(/\n/g, ' ');
+  console.log("Após remover quebras de linha:", formattedText); // Depuração
 
-  formattedText = formattedText.replace(/^\s*[\r\n]+/gm, ''); // Remove blank lines
-  console.log("After removing blank lines:", formattedText); // Debugging
+  // Remove linhas em branco
+  formattedText = formattedText.replace(/^\s*[\r\n]+/gm, '');
+  console.log("Após remover linhas em branco:", formattedText); // Depuração
 
-  formattedText = formattedText.replace(/^\s*$/gm, ''); // Remove lines that are only whitespace
-  console.log("After removing lines that are only whitespace:", formattedText); // Debugging
+  // Remove linhas que são apenas espaços em branco
+  formattedText = formattedText.replace(/^\s*$/gm, '');
+  console.log("Após remover linhas que são apenas espaços em branco:", formattedText); // Depuração
 
-  formattedText = formattedText.replace(/\s+/g, ' ').trim(); // Remove any extra spaces left after replacements
-  console.log("Final Formatted Text:", formattedText); // Debugging
+  // Remove quaisquer espaços extras restantes após as substituições
+  formattedText = formattedText.replace(/\s+/g, ' ').trim();
+  console.log("Texto Formatado Final:", formattedText); // Depuração
 
+  // Define o texto formatado no elemento de saída
   document.getElementById('outputText').value = formattedText;
 }
 
+// Função para copiar o texto formatado para a área de transferência
 function copyText() {
   let outputText = document.getElementById('outputText');
   outputText.select();
-  outputText.setSelectionRange(0, 99999); // For mobile devices
+  outputText.setSelectionRange(0, 99999); // Para dispositivos móveis
   document.execCommand('copy');
 }
