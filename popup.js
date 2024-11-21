@@ -44,6 +44,10 @@ function formatText() {
   console.log("Após remover Documento assinado eletronicamente por com Fls:", formattedText); // Depuração
 
   // Remove "ID. <id> - Pág. <número>"
+  formattedText = formattedText.replace(/ID\. \w{7,8} - Pág\. \d+/gi, '');
+  console.log("Após remover ID e Pág:", formattedText); // Depuração
+
+  // Remove "Fls.: <número>"
   formattedText = formattedText.replace(/Fls\.\:\s*\d+/gi, '');
   console.log("Após remover Fls:", formattedText); // Depuração
 
