@@ -24,6 +24,8 @@ function formatText() {
     { pattern: /https:\/\/pje\.trt\d+\.jus\.br\/\w+\/Processo\/ConsultaDocumento\/listView\.seam\?nd=\d+/gi, replacement: '' },
     // Remove "Assinado eletronicamente por: <nome> - <data> - <id>"
     { pattern: /Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/gi, replacement: '' },
+    // Remove "Assinado eletronicamente por: <nome> - Juntado em: <data> <hora> - <id>"
+    { pattern: /Assinado eletronicamente por: .*? - Juntado em: \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/gi, replacement: '' },
     // Remove "Documento assinado eletronicamente por <nome>, em <data>, às <hora> - <id>"
     { pattern: /Documento assinado eletronicamente por .*?, em \d{2}\/\d{2}\/\d{4}, às \d{2}:\d{2}:\d{2} - \w{7}/gi, replacement: '' },
     // Remove "Documento assinado eletronicamente por <nome>, em <data>, às <hora> - <id> Fls.: <número>"
