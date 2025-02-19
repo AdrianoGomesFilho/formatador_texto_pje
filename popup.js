@@ -38,6 +38,8 @@ function formatText() {
     { pattern: /ID\. \w{7,8} - Pág\. \d+/gi, replacement: '' },
     // Remove "Fls.: <número>"
     { pattern: /Fls\.\:\s*\d+/gi, replacement: '' },
+    // Remove "Firmado por assinatura digital em <data> pelo sistema AssineJus da Justiça do Trabalho, conforme MP 2.200-2/2001, que instituiu a Infra-Estrutura de Chaves Públicas Brasileira."
+    { pattern: /Firmado por assinatura digital em \d{2}\/\d{2}\/\d{4} pelo sistema AssineJus da Justiça do Trabalho, conforme MP 2\.200-2\/2001, que instituiu a Infra-Estrutura de Chaves Públicas Brasileira\./gi, replacement: '' },
     // Remove line breaks
     { pattern: /\n/g, replacement: ' ' },
     // Remove blank lines
