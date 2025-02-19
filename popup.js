@@ -22,6 +22,10 @@ function formatText() {
     { pattern: /Número do documento:\s*\d{29}/gi, replacement: '' },
     // Remove URLs
     { pattern: /https:\/\/pje\.trt\d+\.jus\.br\/\w+\/Processo\/ConsultaDocumento\/listView\.seam\?nd=\d+/gi, replacement: '' },
+    // Remove URLs matching "https://pje.trt1.jus.br/pjekz/validacao/235?instancia=1"
+    { pattern: /https:\/\/pje\.trt\d+\.jus\.br\/pjekz\/validacao\/\d+\?instancia=\d+/gi, replacement: '' },
+    // Remove URLs matching "https://pje.tst.jus.br/tst/Processo/ConsultaDocumento/listView.seam?nd=<number>"
+    { pattern: /https:\/\/pje\.tst\.jus\.br\/tst\/Processo\/ConsultaDocumento\/listView\.seam\?nd=\d+/gi, replacement: '' },
     // Remove "Assinado eletronicamente por: <nome> - <data> - <id>"
     { pattern: /Assinado eletronicamente por:.*? - \d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2} - \w{7}/gi, replacement: '' },
     // Remove "Assinado eletronicamente por: <nome> - Juntado em: <data> <hora> - <id>"
